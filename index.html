@@ -13,9 +13,7 @@
             Documentación de CSS
         </header>
         <a href="#" class="nav-link">Introducción</a>
-        <a href="#" class="nav-link">Selectores de id</a>
-        <a href="#" class="nav-link">Selectores de clase</a>
-        <a href="#" class="nav-link">Selectores de atributo</a>
+        <a href="#" class="nav-link">Selectores CSS</a>
         <a href="#" class="nav-link">Fonts</a>
         <a href="#" class="nav-link">Unidades absolutas</a>
         <a href="#" class="nav-link">Unidades relativas</a>
@@ -26,5 +24,306 @@
         <a href="#" class="nav-link">CSS Flexbox</a>
         <a href="#" class="nav-link">CSS Grid</a>
     </nav>
+    <main id="main-doc">
+        <h1>Documentación del lenguaje CSS</h1>
+        <section id="introduction" class="main-section">
+            <h2>Introducción</h2>
+            <p>
+                <strong>Hojas de Estilo en Cascada</strong> (del inglés Cascading Style Sheets)
+                o <strong>CSS</strong> es el lenguaje de estilos utilizado para describir la presentación de 
+                documentos HTML o XML (en-US) (incluyendo varios lennguajes basados en XML como
+                SVG, MathML o XHTML). CSS describe como debe ser renderizado el elemento 
+                estructurado en la pantalla, en papel, en el habla o en otros medios.
+            </p>
+            <p>
+                <strong>CSS</strong> es uno de los lenguajes base de la Open Web y posee una especificación
+                estandarizada por parte del W3C. Anteriormente , el desarrollo de varias partes de las
+                especificaciones de CSS era realizado de manera sincrónica, lo que permiía el versionado de
+                las recomendaciones. Probablemente habrás escuchado acerca de CSS1, CSS2.1, CSS3. Sin embargo,
+                CSS4 nunca se ha lanzado como una versión oficial.
+            </p>
+            <p>
+                Desde CSS3, el alcance de las especificaciones se incrementó de forma significativa y el progreso
+                de los diferentes modulos de CSS comenzó a mostrar varias diferencias, lo que hizo más efectivo
+                desarrollar y publicar recomendaciones separadas por módulos. En vez de versionar las especificaciones
+                de CSS, la W3C actualmente realiza una captura de las ultimas espcificaciones estables de CSS.
+            </p>
+        </section>
+        <section id="selectors" class="main-section">
+            <h2>Selectores</h2>
+            <h3>Selectores de tipo</h3>
+            <p>
+                El selector de tipo CSS selecciona elementos por nombre de nodo.
+                En otras palabras, selecciona todos los elementos del tipo dado
+                dentro de un documento.
+            </p>
+            <pre class="coding">
+                <code>
+                /* Todos los elementos a */
+
+                a {
+                    color: red;
+                }
+                </code>
+            </pre>
+            <h3>Selectores de clase</h3>
+            <p>
+                En un documento HTML, los selectores de clase buscan un elemento 
+                basado en el contenido de su atributo class. El atributo class 
+                está definido como una lista de elementos separados por espacio, 
+                y uno de esos elementos debe coincidir exactamente con el nombre
+                de clase dado en el selector.
+            </p>
+            <pre class="coding">
+                <code>
+                /* Todos los elementos con
+                 la clase "text-gold" */
+
+                .text-gold {
+                    background-color: gold;
+                }
+                </code>
+            </pre>
+            <h3>Selectores de id</h3>
+            <p>
+                En un documento HTML, los <strong>selectores de ID</strong> de CSS buscan un elemento
+                basado en el contenido del atributo id. El atributo ID del elemento
+                seleccionado debe coincidir exactamente con el valor dado en el selector.
+            </p>
+            <pre class="coding">
+                <code>
+                /* El elemento con id="demo" */
+                
+                #demo {
+                    border: red 2px solid;
+                }
+                </code>
+            </pre>
+            <h3>Selectores de atributo</h3>
+            <p>
+                El <strong>selector de atributos</strong> CSS coincide con los elementos en 
+                función de la presencia o el valor de un atributo determinado.
+            </p>
+            <pre class="coding">
+                <code>
+                /* Elementos input de tipo texto */
+                
+                input[type=text] {
+                    border: red 2px solid;
+                }
+                </code>
+            </pre>
+        </section>
+        <section id="fonts" class="main-section">
+            <h2>Fuentes tipográficas</h2>
+            <p>
+                Usamos la propiedad font-family para definir un tipo de letra diferente para
+                nuestro texto. Esta propiedad indica al navegador el tipo de letra 
+                (o una lista de tipos de letra) que debe aplicar a los elementos seleccionados.
+                El navegador solo aplica el tipo de letra si la máquina que accede al sitio web
+                dispone de ella; en caso contrario, simplemente usa el tipo de letra que tiene
+                definido por defecto (default font). Aquí tienes un ejemplo sencillo:
+            </p>
+            <pre class="coding">
+                <code>
+                /* Fuente Fira Code */
+
+                p {
+                    font-family: "Fira Code";
+                }
+                </code>
+            </pre>
+            <h3>Tipos de letra seguros para la web</h3>
+            <p>
+                Solo hay un cierto número de tipos de letra que están disponibles en todos los
+                sistemas en general, y que en consecuencia pueden utilizarse sin demasiadas 
+                preocupaciones. Son los llamados tipos de letra seguros para la web, o 
+                <strong>web safe fonts</strong> 
+            </p>
+            <ul>
+                <li>Arial</li>
+                <li>Courier New</li>
+                <li>Georgia</li>
+                <li>Times New Roman</li>
+                <li>Trebuchet MS</li>
+                <li>Verdana</li>
+            </ul>
+        </section>
+        <section id="units" class="main-section">
+            <h2>Unidades</h2>
+            <p>
+                El tipo numérico con el que te vas a encontrar con mayor frecuencia es length,
+                por ejemplo, 10px (píxeles) o 30em. En CSS se utilizan dos longitudes diferentes:
+                relativa y absoluta. Es importante conocer la diferencia para entender qué 
+                dimensiones van a tener las cosas.
+            </p>
+            <h3>Unidades de longitud absoluta</h3>
+            <p>
+                Todas las unidades siguientes son unidades de longitud absoluta: no son relativas
+                a nada más y en general se considera que siempre tienen el mismo tamaño.
+            </p>
+            <ul>
+                <li>Centímetros (cm)</li>
+                <li>Milímetros (mm)</li>
+                <li>Cuartos de milímetros (Q)</li>
+                <li>Pulgadas (in)</li>
+                <li>Picas (pc)</li>
+                <li>Puntos (pt)</li>
+                <li>Píxeles (px)</li>
+            </ul>
+            <h3>Unidades de longitud relativa</h3>
+            <p>
+                Las unidades de longitud relativa son relativas a algo más, por ejemplo, al tamaño de
+                letra del elemento principal o al tamaño de la ventana gráfica. La ventaja de usar
+                unidades relativas es que con una planificación cuidadosa puedes lograr que el tamaño
+                del texto u otros elementos escalen en relación con todo lo demás en la página. En la
+                tabla siguiente se enumeran algunas de las unidades más útiles para el desarrollo web.
+            </p>
+            <ul>
+                <li>em</li>
+                <li>ex</li>
+                <li>ch</li>
+                <li>rem</li>
+                <li>lh</li>
+                <li>vw</li>
+                <li>vh</li>
+                <li>vmin</li>
+                <li>vmax</li>
+            </ul>
+        </section>
+        <section id="colors" class="main-section">
+            <h2>Colores</h2>
+            <p>
+
+            </p>
+        </section>
+        <section id="gradients" class="main-section">
+            <h2>CSS Gradients</h2>
+            <p>
+
+            </p>
+        </section>
+        <section id="var" class="main-section">
+            <h2>Variables</h2>
+            <p>
+
+            </p>
+        </section>
+        <section id="cascade" class="main-section">
+            <h2>Cascada y herencia</h2>
+            <p>
+
+            </p>
+        </section>
+        <section id="box" class="main-section">
+            <h2>El modelo de caja</h2>
+            <p>
+
+            </p>
+        </section>
+        <section id="pseudo-classes" class="main-section">
+            <h2>Pseudo-classes</h2>
+            <p>
+
+            </p>
+        </section>
+        <section id="media-queries" class="main-section">
+            <h2>Media queries</h2>
+            <p>
+
+            </p>
+        </section>
+        <section id="transforms" class="main-section">
+            <h2>Transformaciones CSS</h2>
+            <p>
+
+            </p>
+        </section>
+        <section id="animations" class="main-section">
+            <h2>Animaciones</h2>
+            <p>
+
+            </p>
+        </section>
+        <section id="flexbox" class="main-section">
+            <h2>CSS Flexbox</h2>
+            <p>
+                Flexbox es un método de diseño de página unidimensional para compaginar elementos en
+                filas o columnas. Los elementos de contenido se ensanchan para rellenar el espacio
+                adicional y se encogen para caber en espacios más pequeños. En este artículo 
+                expondremos todas sus características básicas.
+            </p>
+            <pre class="coding">
+                <code>
+                    div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                    }
+                </code>
+            </pre>
+            <p>
+                <strong>align-items</strong> controla dónde se ubican los elementos flexibles en el eje transversal.
+            </p>
+            <ul>
+                <li>
+                    Por defecto, el valor es stretch, que ensancha todos los elementos flexibles para
+                    rellenar el elemento primario en la dirección del eje transversal. Si el elemento
+                    padre no tiene un ancho fijo en la dirección del eje transversal, todos los elementos
+                    flexibles son tan largos como los elementos flexibles más largos. Así es como nuestro
+                    primer ejemplo obtuvo columnas de igual altura por defecto.
+                </li>
+                <li>
+                    El valor center que utilizamos en nuestro código anterior mantiene las dimensiones
+                    intrínsecas de los elementos pero los centra sobre el eje transversal. Es por eso que
+                    los botones de nuestro ejemplo ahora están centrados verticalmente.
+                </li>
+                <li>
+                    También puedes tener valores como flex-start y flex-end, que alinean todos los elementos
+                    al inicio y al final del eje transversal, respectivamente. Consulta align-items para
+                    conocer todos los detalles al respecto.
+                </li>
+            </ul>
+            <p>
+                <strong>justify-content</strong> controla dónde se ubican los elementos flexibles sobre el eje principal.
+            </p>
+            <ul>
+                <li>
+                    El valor por defecto es flex-start, que asienta todos los elementos al comienzo del eje principal.
+                </li>
+                <li>
+                    Puedes usar flex-end para que se asienten al final.
+                </li>
+                <li>
+                    center también es un valor de justify-content (para alinear contenido), 
+                    que asienta los elementos flexibles sobre el centro del eje principal.
+                </li>
+                <li> 
+                    El valor space-around que hemos usado antes es útil porque distribuye todos los elementos
+                    de manera uniforme sobre el eje principal y deja un poco de espacio en cada extremo.
+                </li>
+                <li>
+                    Hay otro valor, space-between, que es muy similar a space-around, pero no deja espacio en los extremos.
+                </li>
+            </ul>
+        </section>
+        <section id="grid" class="main-section">
+            <h2>CSS Grid</h2>
+            <p>
+                La compaginación en cuadrícula con CSS es un método de diseño de páginas web en dos dimensiones.
+                Te permite distribuir el contenido en filas y columnas, y tiene muchas características que
+                facilitan la creación de diseños complejos. Este artículo te proporciona todo lo que necesitas 
+                saber para comenzar con el diseño de páginas web.
+            </p>
+            <pre class="coding">
+                <code>
+                    .container {
+                        display: grid;
+                        grid-template-columns: 200px 200px 200px;
+                    }
+                </code>
+            </pre>
+        </section>
+    </main>
 </body>
 </html>
