@@ -194,56 +194,320 @@
         <section id="colors" class="main-section">
             <h2>Colores</h2>
             <p>
-
+                El tipo de datos CSS denota un color en el sRGB color space. Un color puede ser descrito
+                de cualquiera de las siguiente maneras:
             </p>
-        </section>
-        <section id="gradients" class="main-section">
-            <h2>CSS Gradients</h2>
+            <ul>
+                <li>Usando una palabra clave.</li>
+                <li>Usando el sistema  RGB cubic-coordinate  (usando  #-hexadecimal o las notaciones funcionales rgb() y rgba() )</li>
+                <li>Usando el sistema HSL cylindrical-coordinate  (usando las notaciones funcionales hsl() y hsla() )</li>
+            </ul>
+            <h3>Palabras clave de colores</h3>
             <p>
+                Las palabras clave de colores son identificadores en los que no hay distinción entre 
+                mayúsculas y minúsculas y que sirven para representar un color concreto.Como por ejemplo:
+            </p>
+            <ul>
+                <li>Black</li>
+                <li>Silver</li>
+                <li>White</li>
+                <li>Gray</li>
+                <li>Red</li>
+                <li>Green</li>
+                <li>Yellow</li>
+                <li>Blue</li>
+                <li>Pink</li>
+                <li>Orange</li>
+            </ul>
+            <p>Ejemplo de como usarlo</p>
+            <pre class="coding">
+                <code>
+                /* Aplicar el color gold a todos 
+                los encabezados de 1er nivel*/
 
+                h1 {
+                    color: gold;
+                }
+                </code>
+            </pre>
+            <h3>Sistema RGB</h3>
+            <h4>RGB</h4>
+            <p>
+                Los colores puede ser definidos usando el modelo RGB (rojo-verde-azul) de dos maneras:
+                Notación Hexadecimal #RRGGBB y #RGB
+            </p>
+            <ul>
+                <li>"#", seguido de seis caracteres hexadecimales (0-9, A-F).</li>
+                <li>"#", seguido de tres caracteres hexadecimales (0-9, A-F).</li>
+            </ul>
+            <p>Ejemplo de color usando RGB</p>
+            <pre class="coding">
+                <code>
+                /* Todos estos ejemplos son el mismo color RGB: */
+
+                #f03
+                #F03
+                #ff0033
+                #FF0033
+                rgb(255,0,51)
+                rgb(255, 0, 51)
+                rgb(255, 0, 51.2) /* ¡ERROR! No uses número decimales , usa enteros*/
+                rgb(100%,0%,20%)
+                rgb(100%, 0%, 20%)
+                rgb(100%, 0, 20%) /* ¡ERROR! No mezcles notaciones de enteros y de porcentajes*/
+                </code>
+            </pre>   
+            <h4>RGBA</h4>
+            <p>
+                Podemos definir los colores con el modelo Rojo (red) - Verde (green) - Azul (blue) - alpha (RGBa)
+                usando la notación funcional rgba(). RGBa amplia el modelo RGA añadiendo un canal alfa, permitiendo
+                de esta manera especificar la opacidad de un color.
+                a representa opacidad: 0=transparente; 1=opaco;
+            </p>
+            <p>Ejemplo básico de su uso:</p>
+            <pre class="coding">
+                <code>
+                /* Todos estos ejemplos son el mismo color RGB: */
+
+                rgba(255,0,0,0.1)    /* 10% opaque red */  
+                rgba(255,0,0,0.4)    /* 40% opaque red */  
+                rgba(255,0,0,0.7)    /* 70% opaque red */  
+                rgba(255,0,0,  1)    /* full opaque red */ 
+                </code>
+            </pre>   
+            <h3>Sistema HSL</h3>
+            <h4>hsl</h4>
+            <p>
+                Los colores también puede ser definidos usando el modelo  tono (hue) - saturación (saturation) 
+                - brillo (lightness) (HSL) con la notación funcional hsl(). La ventaja del modelo HSL sobre el modelo
+                RGB es que es mucho más intuitivo: puedes adivinar los colores que tú quieres y luego modificarlos. 
+                Es también más fácil crear conjuntos de colores (manteniendo el tono (hue)  igual y modificando 
+                el brillo y la saturación.
+            </p>
+            <p>
+                El tono (Hue)  se representa como un ángulo del círculo de color (por así decir, el arco iris representado
+                en un círculo). El ángulo se proporciona como un number sin unidades. Por definición rojo=0=360, y los demas
+                colores están dispersos por el círculo, verde=120, azul=240, etc. Al ser un ánguilo implítamente -120=240 y 480=120.
+            </p>
+            <p>
+                La saturación y el brillo son representados por porcentajes.100%  es saturacion completa, y 0% es una sombra de gris..
+                100% brillo es blanco, 0%  negro, y 50% es brillo "normal".
+            </p>
+            <h4>hsla</h4>
+            <p>
+                Podemos definir los colores usando el modelo saturación tono (hue) - (saturation) - brillo (lightness)  (HSLa) usando
+                la notación funcional hsla(). HSLa amplía el modelo HSL incluyendo el canal alfa, permitiendo de esta manera especificar
+                la opacidad de un color. a es la opacidad: 0=transparente; 1=opaco;
             </p>
         </section>
         <section id="var" class="main-section">
             <h2>Variables</h2>
             <p>
-
+                En CSS, las propiedades personalizadas (también conocidas como variables) son entidades definidas por autores de CSS que
+                contienen valores específicos que se pueden volver a utilizar en un documento. Se establecen mediante la notación de 
+                propiedades personalizadas (por ejemplo, --main-color: black;) y se acceden mediante la función var() (por ejemplo, color: var 
+                (--main-color);).
             </p>
+            <p>
+                Para declarar propiedades personalizadas (variables) usamos un nombre que comienze con dos guiones (--), y un valor que puede
+                ser cualquier valor válido de CSS. Como cualquier otra propiedad, la escribimos dentro de un set de reglas de estilo, algo así:
+            </p>
+            <pre class="coding">
+                <code>
+                elemento {
+                    --main-bg-color: brown;
+                  }
+                  
+                </code>
+            </pre>   
+            <p>
+                Ten en cuenta que el selector que usemos para las reglas de estilo define el ámbito (scope) en el que podremos usar la propiedad
+                personalizada (variable). Una buena práctica común es declarar variables en la pseudo-clase :root, y así aplicarlas globalmente
+                al documento HTML:
+            </p>
+            <pre class="coding">
+                <code>
+                :root {
+                    --main-bg-color: brown;
+                }  
+                  
+                </code>
+            </pre>   
         </section>
         <section id="cascade" class="main-section">
             <h2>Cascada y herencia</h2>
+            <h3>Cascada</h3>
             <p>
-
+                En un primer nivel de simplicidad, la cascada en las hojas de estilo significa que el orden de las reglas importa en CSS: cuando 
+                dos reglas tienen la misma especificidad, se aplica la que aparece en último lugar en el CSS.
             </p>
-        </section>
-        <section id="box" class="main-section">
-            <h2>El modelo de caja</h2>
             <p>
-
+                En el ejemplo siguiente tenemos dos reglas que pueden aplicarse al h1. El h1 acaba siendo de color azul porque estas normas tienen
+                un selector idéntico y, por lo tanto, tienen la misma especificidad. Por esta razón, se aplica la última que aparece.
             </p>
+            <pre class="coding">
+                <code>
+                h1 { 
+                    color: red; 
+                }
+                h1 { 
+                    color: blue; 
+                }
+                </code>
+            </pre>   
+            <h3>Especificidad</h3>
+            <p>
+                La especificidad es el modo que tiene el navegador de decidir qué regla se aplica si diversas reglas tienen selectores diferentes
+                pero podrían aplicarse a un mismo elemento. Básicamente, la especificidad mide cuán específica es la selección de un selector:
+            </p>
+            <ul>
+                <li>
+                    Un selector de elemento es menos específico (selecciona todos los elementos de aquel tipo que aparecen en la página) por lo que
+                    presenta una puntuación más baja en especificidad.
+                </li>
+                <li>
+                    Un selector de clase es más específico (selecciona solo los elementos de una página que tienen un valor de atributo class dado),
+                    y por tanto recibe una puntuación mayor.
+                </li>
+            </ul>
+            <p>
+                Veamos un ejemplo. Aquí abajo encontrarás dos reglas que pueden aplicarse al elemento h1. Este elemento h1 termina siendo de color rojo:
+                el selector de clase confiere a esta regla una mayor especificidad, así que se aplicará a pesar de la regla para el selector de elemento
+                que aparece más abajo en el orden del código.
+            </p>
+            <pre class="coding">
+                <code>
+                .main-heading { 
+                    color: red; 
+                }
+
+                h1 { 
+                    color: blue; 
+                }
+                </code>
+            </pre>
+            <h3>Herencia</h3>
+            <p>
+                La herencia también debe entenderse en este contexto: algunos valores de las propiedades CSS que se han establecido para los elementos padre
+                los heredan los elementos hijo, pero otros no.
+            </p>
+            <p>
+                Por ejemplo, si para un elemento se establece el color (color) y el tipo de letra (font-family), cada elemento que se encuentre dentro de él
+                también se mostrará de ese color y con ese tipo de letra, a menos que les se haya aplicado un color y un tipo de letra diferentes directamente.
+            </p>
+            <pre class="coding">
+                <code>
+                body {
+                    color: blue;
+                }
+                
+                span {
+                    color: black;
+                }
+                </code>
+            </pre>
         </section>
         <section id="pseudo-classes" class="main-section">
             <h2>Pseudo-classes</h2>
             <p>
-
+                Una pseudoclase CSS es una palabra clave que se añade a los selectores y que especifica un estado especial del elemento seleccionado. Por ejemplo,
+                :hover aplicará un estilo cuando el usuario haga hover sobre el elemento especificado por el selector.
             </p>
+            <pre class="coding">
+                <code>
+                div:hover {
+                    background-color: #F89B4D;
+                }
+                </code>
+            </pre>
+            <p>
+                Otras pseudo-clases existentes son las siguientes:
+            </p>
+            <ul>
+                <li>
+                     <strong>active:</strong>
+                    La pseudo-clase (en-US) :active de CSS  representa un elemento (como un botón) que el usuario está activando.
+                    Cuando se usa un mouse, la "activación" generalmente comienza cuando el usuario presiona el botón primario del
+                    mouse y termina cuando se suelta. La pseudo-clase :active se usa comúnmente en los elementos a y button, pero 
+                    también se puede usar en otros elementos.
+                </li>
+                <li> 
+                    <strong>checked:</strong>
+                    La pseudo-clase :checked de CSS representa cualquier radio (input type="radio" (en-US)), checkbox 
+                    (input type="checkbox") u option (option en un elemento select) que está marcado o conmutado a un estado on. 
+                </li>
+                <li>
+                    <strong>enabled:</strong> 
+                    La pseudo-clase :enabled CSS representa cualquier elemento habilitado. Un elemento está habilitado si puede ser
+                    activado (es decir seleccionado, se puede hacer click en él, acepta que se le introduzca texto, etc.) o si accepta
+                    el foco. El elemento también tiene un estado deshabilitado el en cuál, no puede ser activado ni acepta el foco.
+                </li>
+                <li> 
+                    <strong>focus:</strong> 
+                    La pseudo-clase :focus CSS representa un elemento (como una entrada de formulario) que ha recibido el foco. 
+                    Generalmente se activa cuando el usuario hace clic, toca un elemento o lo selecciona con la tecla "Tab" del teclado. 
+                </li>
+                <li> 
+                    <strong>visited:</strong>  
+                    La pseudo-clase :visited de CSS  representa enlaces que el usuario ya ha visitado. Por motivos de privacidad, 
+                    los estilos que se pueden modificar con este selector son muy limitados.
+                </li>
+            </ul>
         </section>
         <section id="media-queries" class="main-section">
             <h2>Media queries</h2>
             <p>
-
+                Las media queries (en español "consultas de medios") son útiles cuando deseas modificar tu página web o aplicación
+                en función del tipo de dispositivo (como una impresora o una pantalla) o de características y parámetros específicos
+                (como la resolución de la pantalla o el ancho del viewport del navegador).
             </p>
+            <p>
+                Se utilizan para:
+                <ul>
+                    <li>Aplicar estilos condicionales con las reglas-at @media e @import de CSS.</li>
+                    <li>Indicar medios específicos en los elementos link, source y otros elementos HTML.</li>
+                    <li>
+                        Testear y monitorizar los estados de los medios usando los métodos de javascript
+                        Window.matchMedia() y MediaQueryList.addListener().
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Las media queries consisten de un tipo de medio opcional y una o más expresiones de características de medios. 
+                Varias consultas se pueden combinar utilizando operadores lógicos. No distinguen entre mayúsculas y minúsculas.
+            </p>
+            <p>
+                El resultado de la consulta es "verdadero" cuando el tipo de medio (si se especifica) coincide con el dispositivo
+                en el que se está mostrando el documento y todas las expresiones en el media query son "verdaderas". En este caso,
+                se aplica los estilos correspondientes, siguiendo las reglas usuales de cascada.
+            </p>
+            <pre class="coding">
+                <code>
+                @media (max-width: 600px) {
+                    .facet_sidebar {
+                          display: none;
+                    }
+                </code>
+            </pre>
         </section>
         <section id="transforms" class="main-section">
             <h2>Transformaciones CSS</h2>
             <p>
-
+                Al modificar las coordenadas del espacio, las transformaciones CSS permiten cambiar la posición del contenido afectado sin
+                interrumpir el flujo normal. Se implementan haciendo uso de un conjunto de propiedades CSS que permiten aplicar transformaciones
+                lineales a elementos HTML. Estas transformaciones incluyen rotar, torcer, escalar y desplazar en plano o en un espacio 3D.
             </p>
-        </section>
-        <section id="animations" class="main-section">
-            <h2>Animaciones</h2>
             <p>
-
+                Ejemplo de una transformación a una imagen
             </p>
+            <pre class="coding">
+                <code>
+                    img {
+                        transform: rotate(90deg);
+                        transform-origin: bottom left;"
+                    }
+                </code>
+            </pre>
         </section>
         <section id="flexbox" class="main-section">
             <h2>CSS Flexbox</h2>
