@@ -2,6 +2,7 @@
 
 body {
     display: flex;
+    flex-direction: column;
     font-family: Inconsolata;
 }
 
@@ -37,7 +38,7 @@ body {
 }
 
 #nav-bar div a {
-    padding-left: 10%;
+    padding-left: 15%;
 }
 
 .nav-link {
@@ -51,6 +52,11 @@ body {
     height: 10%;
     font-size: 1.2vw;
     font-weight: 500;
+}
+
+.nav-link:hover{
+    background-color: black;
+    color: turquoise;
 }
 
 #main-doc {
@@ -93,6 +99,7 @@ body {
 
 .main-section pre {
     border-style: none;
+    border-radius: 1.5vw;
     background-color: silver;
 }
 
@@ -102,11 +109,30 @@ body {
     font-family: Inconsolata;
 }
 
-@media (max-width: 600px) {
+footer {
+    margin-left: 18%;
+    margin-right: 3%;
+    background-color: turquoise;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 1vw;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    font-size: 1.2vw;
+}
 
-    body {
-        flex-direction: column;
-    }
+footer div a:link {
+    text-decoration-line: none;
+    color: navy;
+}
+
+footer div a:visited {
+    color: indigo;
+}
+
+@media (max-width: 600px) {
 
     #nav-bar {
         position: sticky;
