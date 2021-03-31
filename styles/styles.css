@@ -6,17 +6,18 @@ body {
     font-family: Inconsolata;
 }
 
-#nav-bar {
+#navbar {
     border-right: solid;
     border-color: gray;
     height: 100vh;
+    width: auto;
     background-color: turquoise;
     position: fixed;
     top: 0px;
     left: 0px;
 }
 
-#nav-bar header {
+#navbar header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,16 +29,15 @@ body {
     height: 10%;
     font-size: 1.5vw;
     font-weight: 900;
-    width: auto;
 }
 
-#nav-bar div {
+#navbar div {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 90%;
 }
 
-#nav-bar div a {
+#navbar div a {
     padding-left: 15%;
 }
 
@@ -76,7 +76,7 @@ body {
     margin-bottom: 5%;
 }
 
-.main-section h2 {
+.main-section header {
     font-weight: 700;
     font-size: 2.3vw;
 }
@@ -132,9 +132,14 @@ footer div a:visited {
     color: indigo;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
+  
+    body {
+        justify-content: center;
+        align-items: center;
+    }
 
-    #nav-bar {
+    #navbar {
         position: sticky;
         top: 0px;
         width: 100%;
@@ -144,15 +149,15 @@ footer div a:visited {
         border-width: thin;
     }
     
-    #nav-bar header {
+    #navbar header {
         height: 20%;
     }
     
-    #nav-bar div {
+    #navbar div {
         height: 80%;
     }
     
-    #nav-bar div a {
+    #navbar div a {
         padding-left: 5%;
     }
     
@@ -161,6 +166,11 @@ footer div a:visited {
         margin-right: 3%;
         padding-left: 0%;
         padding-right: 0%;
+    }
+  
+    footer {
+        margin-left: 0%;
+        margin-right: 0%;
     }
 }
 
